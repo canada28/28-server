@@ -1,0 +1,38 @@
+@layout("/common/_container.html"){
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>下注管理管理</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="row row-lg">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <#NameCon id="condition" name="名称" />
+                            </div>
+                            <div class="col-sm-3">
+                                <#button name="搜索" icon="fa-search" clickFun="Stakes.search()"/>
+                            </div>
+                        </div>
+                        <div class="hidden-xs" id="StakesTableToolbar" role="group">
+                            @if(shiro.hasPermission("/stakes/add")){
+                                <#button name="添加" icon="fa-plus" clickFun="Stakes.openAddStakes()"/>
+                            @}
+                            @if(shiro.hasPermission("/stakes/update")){
+                                <#button name="修改" icon="fa-edit" clickFun="Stakes.openStakesDetail()" space="true"/>
+                            @}
+                            @if(shiro.hasPermission("/stakes/delete")){
+                                <#button name="删除" icon="fa-remove" clickFun="Stakes.delete()" space="true"/>
+                            @}
+                        </div>
+                        <#table id="StakesTable"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/game/stakes/stakes.js"></script>
+@}

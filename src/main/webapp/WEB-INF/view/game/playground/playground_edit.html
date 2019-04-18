@@ -1,0 +1,32 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="ID" value="${item.id}" underline="true"/>
+                            <#input id="gid" name="游戏ID" value="${item.gid}" underline="true"/>
+                            <#input id="title" name="房间标题" value="${item.title}" underline="true"/>
+                            <#input id="oddsExplain" name="赔率说明" value="${item.oddsExplain}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="gameRule" name="游戏规则" value="${item.gameRule}" underline="true"/>
+                            <#input id="status" name="状态（1=正常 2=维护）" value="${item.status}" underline="true"/>
+                            <#input id="createTime" name="创建时间" value="${item.createTime}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="PlaygroundInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="PlaygroundInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/game/playground/playground_info.js"></script>
+@}

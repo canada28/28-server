@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.game.dao.YzNoticeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.game.model.YzNotice">
+        <id column="id" property="id" />
+        <result column="suid" property="suid" />
+        <result column="img" property="img" />
+        <result column="title" property="title" />
+        <result column="content" property="content" />
+        <result column="indx" property="indx" />
+        <result column="type" property="type" />
+        <result column="status" property="status" />
+        <result column="zuthor" property="zuthor" />
+        <result column="timing" property="timing" />
+        <result column="sta_time" property="staTime" />
+        <result column="end_time" property="endTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="create_time" property="createTime" />
+        <result column="remark" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, suid, img, title, content, indx, type, status, zuthor, timing, sta_time, end_time, update_time, create_time, remark
+    </sql>
+
+</mapper>

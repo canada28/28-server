@@ -1,0 +1,37 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="ID" underline="true"/>
+                            <#input id="period" name="期号" underline="true"/>
+                            <#input id="dateStr" name="日期" underline="true"/>
+                            <#input id="timeStr" name="时间" underline="true"/>
+                            <#input id="chTime" name="中国时间" underline="true"/>
+                            <#input id="numbers" name="开奖号码"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="one" name="球一结果" underline="true"/>
+                            <#input id="two" name="球二结果" underline="true"/>
+                            <#input id="three" name="球三结果" underline="true"/>
+                            <#input id="result" name="最终结果" underline="true"/>
+                            <#input id="oddEven" name="奇偶数（1=奇数 2=偶数）" underline="true"/>
+                            <#input id="createTime" name="创建时间" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="Canada28InfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="Canada28InfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/game/canada28/canada28_info.js"></script>
+@}

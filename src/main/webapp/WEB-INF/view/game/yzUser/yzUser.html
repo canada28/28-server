@@ -1,0 +1,52 @@
+@layout("/common/_container.html"){
+<div class="row">
+    <div class="col-sm-12">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>用户管理管理</h5>
+            </div>
+            <div class="ibox-content">
+                <div class="row row-lg">
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <#NameCon id="name" name="用户" placeholder="UID/姓名/手机号/昵称"/>
+                            </div>
+                            <div class="col-sm-3">
+                                <#TimeCon id="beginTime" name="注册开始日期" isTime="false"/>
+                            </div>
+                            <div class="col-sm-3">
+                                <#TimeCon id="endTime" name="注册结束日期" isTime="false"/>
+                            </div>
+                            <div class="col-sm-3">
+                                <#button name="搜索" icon="fa-search" clickFun="YzUser.search()"/>
+                            </div>
+                        </div>
+                        <div class="hidden-xs" id="YzUserTableToolbar" role="group">
+                            @if(shiro.hasPermission("/yzUser/add")){
+                                <#button name="添加" icon="fa-plus" clickFun="YzUser.openAddYzUser()"/>
+                            @}
+                            @if(shiro.hasPermission("/yzUser/update")){
+                                <#button name="修改" icon="fa-edit" clickFun="YzUser.openYzUserDetail()" space="true"/>
+                            @}
+                            @if(shiro.hasPermission("/yzUser/delete")){
+                                <#button name="删除" icon="fa-remove" clickFun="YzUser.delete()" space="true"/>
+                            @}
+                        </div>
+                        <#table id="YzUserTable"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/game/yzUser/yzUser.js"></script>
+<script>
+    laydate.render({
+        elem: '#beginTime'
+    });
+    laydate.render({
+        elem: '#endTime'
+    });
+</script>
+@}

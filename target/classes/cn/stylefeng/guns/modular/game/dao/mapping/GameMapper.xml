@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.game.dao.GameMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.game.model.Game">
+        <id column="id" property="id" />
+        <result column="title" property="title" />
+        <result column="descr" property="descr" />
+        <result column="icon" property="icon" />
+        <result column="Introduction" property="Introduction" />
+        <result column="interval" property="interval" />
+        <result column="befor_time" property="beforTime" />
+        <result column="after_time" property="afterTime" />
+        <result column="url" property="url" />
+        <result column="sort" property="sort" />
+        <result column="status" property="status" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, title, descr, icon, Introduction,"interval", befor_time, after_time, url, sort, status, create_time
+    </sql>
+
+</mapper>

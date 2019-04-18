@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.game.dao.Canada28Mapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.game.model.Canada28">
+        <id column="id" property="id"/>
+        <result column="period" property="period"/>
+        <result column="date_str" property="dateStr"/>
+        <result column="time_str" property="timeStr"/>
+        <result column="ch_time" property="chTime"/>
+        <result column="numbers" property="numbers"/>
+        <result column="one" property="one"/>
+        <result column="two" property="two"/>
+        <result column="three" property="three"/>
+        <result column="result" property="result"/>
+        <result column="odd_even" property="oddEven"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, period, date_str, time_str, ch_time, numbers, one, two, three, result, odd_even, create_time
+    </sql>
+
+    <select id="selectCanadaByQuery" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from yz_canada28 where  1=1
+        <if test="condition != null and condition !=''">
+            and id=#{condition}
+        </if>
+    </select>
+
+</mapper>

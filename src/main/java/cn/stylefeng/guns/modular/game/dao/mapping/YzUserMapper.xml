@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.modular.game.dao.YzUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.modular.game.model.YzUser">
+        <id column="id" property="id" />
+        <result column="token" property="token" />
+        <result column="phone" property="phone" />
+        <result column="email" property="email" />
+        <result column="icon" property="icon" />
+        <result column="nick_name" property="nickName" />
+        <result column="qq" property="qq" />
+        <result column="name" property="name" />
+        <result column="password" property="password" />
+        <result column="found_password" property="foundPassword" />
+        <result column="msg_code" property="msgCode" />
+        <result column="lock" property="lock" />
+        <result column="parent" property="parent" />
+        <result column="assets" property="assets" />
+        <result column="frozen_assets" property="frozenAssets" />
+        <result column="status" property="status" />
+        <result column="reserved" property="reserved" />
+        <result column="roomid" property="roomid" />
+        <result column="login_ip" property="loginIp" />
+        <result column="login_time" property="loginTime" />
+        <result column="create_time" property="createTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, token, phone, email, icon, nick_name, qq, `name`, password, found_password, msg_code, `lock`, parent, `assets`, frozen_assets, status, reserved,roomid,login_ip, login_time, create_time
+    </sql>
+
+    <select id="selectListByQuery" resultMap="BaseResultMap" >
+        select <include refid="Base_Column_List"/> from yz_user where 1 = 1
+        <if test="namea != null and namea !=''">
+            and nick_name like CONCAT('%',#{namea},'%')
+            or `name` like CONCAT('%',#{namea},'%')
+            or id like CONCAT('%',#{namea},'%')
+            or phone like CONCAT('%',#{namea},'%')
+        </if>
+        <if test="beginTime != null and beginTime != '' and endTime != null and endTime != ''">
+            and (create_time between CONCAT(#{beginTime},' 00:00:00') and CONCAT(#{endTime},' 23:59:59'))
+        </if>
+    </select>
+
+</mapper>

@@ -1,0 +1,44 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="UID" underline="true"/>
+                            <#input id="token" name="Tokem" underline="true"/>
+                            <#input id="phone" name="手机" underline="true"/>
+                            <#input id="email" name="邮箱" underline="true"/>
+                            <#input id="icon" name="头像" underline="true"/>
+                            <#input id="nickName" name="昵称" underline="true"/>
+                            <#input id="qq" name="QQ" underline="true"/>
+                            <#input id="name" name="姓名" underline="true"/>
+                            <#input id="password" name="登录密码" underline="true"/>
+                            <#input id="foundPassword" name="资金密码"/>
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="msgCode" name="短信验码" underline="true"/>
+                            <#input id="lock" name="设备锁（1=锁定  2=未锁）" underline="true"/>
+                            <#input id="parent" name="邀请人" underline="true"/>
+                            <#input id="assets" name="可用资产" underline="true"/>
+                            <#input id="frozenAssets" name="冻结资产" underline="true"/>
+                            <#input id="status" name="状态（1=正常 2=冻结）" underline="true"/>
+                            <#input id="loginIp" name="登陆IP" underline="true"/>
+                            <#input id="loginTime" name="登陆时间" underline="true"/>
+                            <#input id="createTime" name="注册时间" underline="true"/>
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="YzUserInfoDlg.addSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="YzUserInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/game/yzUser/yzUser_info.js"></script>
+@}

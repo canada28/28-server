@@ -1,0 +1,44 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="UID" value="${item.id}" underline="true"/>
+                            <#input id="token" name="Tokem" value="${item.token}" underline="true"/>
+                            <#input id="phone" name="手机" value="${item.phone}" underline="true"/>
+                            <#input id="email" name="邮箱" value="${item.email}" underline="true"/>
+                            <#input id="icon" name="头像" value="${item.icon}" underline="true"/>
+                            <#input id="nickName" name="昵称" value="${item.nickName}" underline="true"/>
+                            <#input id="qq" name="QQ" value="${item.qq}" underline="true"/>
+                            <#input id="name" name="姓名" value="${item.name}" underline="true"/>
+                            <#input id="password" name="登录密码" value="${item.password}" underline="true"/>
+                            <#input id="foundPassword" name="资金密码" value="${item.foundPassword}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="msgCode" name="短信验码" value="${item.msgCode}" underline="true"/>
+                            <#input id="lock" name="设备锁（1=锁定  2=未锁）" value="${item.lock}" underline="true"/>
+                            <#input id="parent" name="邀请人" value="${item.parent}" underline="true"/>
+                            <#input id="assets" name="可用资产" value="${item.assets}" underline="true"/>
+                            <#input id="frozenAssets" name="冻结资产" value="${item.frozenAssets}" underline="true"/>
+                            <#input id="status" name="状态（1=正常 2=冻结）" value="${item.status}" underline="true"/>
+                            <#input id="loginIp" name="登陆IP" value="${item.loginIp}" underline="true"/>
+                            <#input id="loginTime" name="登陆时间" value="${item.loginTime}" underline="true"/>
+                            <#input id="createTime" name="注册时间" value="${item.createTime}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="YzUserInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="YzUserInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/game/yzUser/yzUser_info.js"></script>
+@}

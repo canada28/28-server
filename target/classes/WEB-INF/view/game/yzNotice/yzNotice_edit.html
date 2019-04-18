@@ -1,0 +1,40 @@
+@layout("/common/_container.html"){
+<div class="ibox float-e-margins">
+    <div class="ibox-content">
+        <div class="form-horizontal">
+
+            <div class="row">
+                <div class="col-sm-6 b-r">
+                            <#input id="id" name="NID" value="${item.id}" underline="true"/>
+                            <#input id="suid" name="管理ID" value="${item.suid}" underline="true"/>
+                            <#input id="img" name="封面" value="${item.img}" underline="true"/>
+                            <#input id="title" name="标题" value="${item.title}" underline="true"/>
+                            <#input id="content" name="内容" value="${item.content}" underline="true"/>
+                            <#input id="indx" name="位置" value="${item.indx}" underline="true"/>
+                            <#input id="type" name="类型（1=系统公告&横滚文 2=最新公告 3=会员必读  4=玩法介绍 5=赔率说明 6=玩法规则）" value="${item.type}" underline="true"/>
+                            <#input id="status" name="状态（1=发布 2=待发布）" value="${item.status}" />
+                </div>
+
+                <div class="col-sm-6">
+                            <#input id="zuthor" name="作者" value="${item.zuthor}" underline="true"/>
+                            <#input id="timing" name="定时（1=即时 2=定时）" value="${item.timing}" underline="true"/>
+                            <#input id="staTime" name="上架时间" value="${item.staTime}" underline="true"/>
+                            <#input id="endTime" name="下架时间" value="${item.endTime}" underline="true"/>
+                            <#input id="updateTime" name="更新时间" value="${item.updateTime}" underline="true"/>
+                            <#input id="createTime" name="创建时间" value="${item.createTime}" underline="true"/>
+                            <#input id="remark" name="备注" value="${item.remark}" />
+                </div>
+            </div>
+
+            <div class="row btn-group-m-t">
+                <div class="col-sm-10">
+                    <#button btnCss="info" name="提交" id="ensure" icon="fa-check" clickFun="YzNoticeInfoDlg.editSubmit()"/>
+                    <#button btnCss="danger" name="取消" id="cancel" icon="fa-eraser" clickFun="YzNoticeInfoDlg.close()"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="${ctxPath}/static/modular/game/yzNotice/yzNotice_info.js"></script>
+@}
